@@ -1,0 +1,553 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.724);
+  padding: 10px 20px; /* Espaçamento dentro do header */
+  position: fixed; /* Fixa o header no topo */
+  width: 100%; /* Faz o header ocupar toda a largura da página */
+  top: 0; /* Posiciona no topo da página */
+  z-index: 10; /* Garante que o header fique acima do conteúdo */
+}
+
+header nav ul {
+  list-style-type: none;
+  display: flex; /* Organiza os links horizontalmente */
+  justify-content: center; /* Alinha os links no centro */
+}
+
+header nav ul li {
+  margin: 0 15px; /* Espaço entre os links */
+}
+
+header nav ul li a {
+  color: white; /* Cor branca para o texto dos links */
+  text-decoration: none; /* Remove o sublinhado dos links */
+  transition: color 0.3s; /* Transição suave na cor ao passar o mouse */
+}
+
+header nav ul li a:hover {
+  color: blue; /* Cor verde clara no hover */
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  position: relative;
+  padding-top: 60px; /* Espaço para o header fixo */
+}
+
+.home {
+  background-color: black;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Faz a seção ocupar toda a altura da viewport */
+  width: 100%; /* Faz a seção ocupar toda a largura */
+  padding: 0; /* Remove qualquer padding indesejado */
+  margin: 0; /* Remove qualquer margem indesejada */
+  overflow: hidden; /* Garante que nenhum conteúdo saia dos limites */
+}
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.home-content {
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-family: 'Kode Mono', monospace;
+  font-size: 15px;
+  background-color: rgba(0, 0, 0, 0.739);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.saiba-mais-btn {
+  margin-top: 20px; /* Adiciona um espaçamento entre o texto e o botão */
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #0ca1fe, #1cffe1); /* Gradiente de cor */
+  color: black;
+  font-weight: bold;
+  text-decoration: none; /* Remove o sublinhado do link */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.3s ease;
+  background-size: 200%; /* Para a animação do gradiente */
+  display: inline-block;
+}
+
+.saiba-mais-btn:hover {
+  background-position: 100%; /* Animação do gradiente ao passar o mouse */
+  transform: scale(1.1); /* Leve aumento do botão */
+  box-shadow: 0 0 15px rgba(12, 161, 254, 0.7); /* Brilho ao redor do botão */
+}
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-content h1 {
+  font-size: 2em;
+  font-weight: bold;
+  background: linear-gradient(90deg, #0ca1fe, #1cffe1, #0ca1fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s infinite linear;
+  
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+.home-content p {
+  color: white;
+  animation: fadeInUp 2s ease-out 1s forwards;
+}
+
+
+.contact {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  height: 100vh; /* Ocupa toda a altura da tela */
+  text-align: center; /* Centraliza o texto */
+  padding: 20px;
+}
+
+
+/* A moldura verde agora está no contêiner principal da seção */
+.about {
+  background-color: white;
+  color: black;
+  /*border: 5px solid #0ca1fe;  Moldura verde */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 80px; /* Espaçamento interno */
+  margin: 20px; /* Espaçamento externo */
+  box-sizing: border-box; /* Inclui bordas e padding no tamanho total */
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Espaçamento entre imagem e texto */
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  animation: fadeInUp 2s ease-out 1s forwards;
+
+}
+
+.about-image img {
+  width: 400px; /* Largura da imagem */
+  height: 400px; /* Altura da imagem */
+  border-radius: 50%; /* Formato redondo */
+  object-fit: cover; /* Garante proporção */
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.328); /* Sombra para destaque */
+}
+
+.about-text {
+  flex: 2;
+  font-size: 15px;
+  text-align: center; /* Texto alinhado à esquerda */
+}
+
+.about-text p{
+  animation: fadeInUp 2s ease-out 1s forwards;
+
+}
+
+.about-text h1 {
+
+  font-size: 2em;
+  font-weight: bold;
+  background: linear-gradient(90deg, #0ca1fe, #038b79, #0ca1fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 2s ease-out 1s forwards;
+  
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+
+
+
+
+
+.about2 {
+  background-color: white;
+  color: black;
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 80px; /* Espaçamento interno */
+  margin: 20px; /* Espaçamento externo */
+  box-sizing: border-box; /* Inclui bordas e padding no tamanho total */
+}
+
+.about2-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espaça texto e imagem uniformemente */
+  gap: 20px; /* Espaçamento entre imagem e texto */
+}
+
+.about2-text {
+  flex: 2; /* O texto ocupa mais espaço */
+  font-size: 15px;
+  text-align: left; /* Texto alinhado à esquerda */
+}
+
+.about2-text p {
+  animation: fadeInUp 2s ease-out 1s forwards;
+}
+
+.about2-text h1 {
+  font-size: 2em;
+  font-weight: bold;
+  background: linear-gradient(90deg, #0ca1fe, #038b79, #0ca1fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 2s ease-out 1s forwards;
+}
+
+.about2-image {
+  flex: 1; /* A imagem ocupa menos espaço */
+  display: flex;
+  justify-content: center; /* Centraliza a imagem no espaço disponível */
+  animation: fadeInUp 2s ease-out 1s forwards;
+}
+
+.about2-image img {
+  width: 400px; /* Largura da imagem */
+  height: 400px; /* Altura da imagem */
+  border-radius: 50%; /* Formato redondo */
+  object-fit: cover; /* Garante proporção */
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.328); /* Sombra para destaque */
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+
+.projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background-color: rgb(255, 251, 251);
+}
+
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px; /* Espaçamento entre as colunas */
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 80px; /* Espaçamento entre os quadrados */
+}
+
+.square {
+  width: 500px;
+  height: 200px;
+  border-radius: 8px; /* Bordas arredondadas */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Para posicionar o conteúdo corretamente */
+  box-shadow: 0 4px 6px rgb(0, 0, 0); /* Sombra para o botão */
+  border-radius: 10px 0px;
+
+}
+
+.center-square {
+  width: 300px;
+  height: 300px;
+  background-image: url('https://img.freepik.com/fotos-premium/uma-lampada-com-um-fundo-branco_876282-346.jpg');
+  background-size: 80%; /* Reduz a imagem para 80% do seu tamanho original */
+  background-position: center; /* Centraliza a imagem dentro do quadrado */
+  background-repeat: no-repeat; /* Impede que a imagem se repita */
+
+}
+
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+.box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  max-width: 200px;
+  padding: 10px;
+  background-color: #5c5757;
+  height: 200px;
+  border-radius: 10px 0px;
+  margin-bottom: 10px;
+  margin: 5px; /* Espaçamento externo */
+
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #7ccafa, #87faeb, #80ceff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 2s ease-out 1s forwards;
+  
+}
+
+.text {
+  font-size: 14px;
+  color: black;
+  max-width: 70%; /* Limitar a largura do texto */
+  word-wrap: break-word;
+}
+
+.icon {
+  font-size: 30px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #0ca1fe, #038b79, #0ca1fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 2s ease-out 1s forwards;
+  
+}
+
+
+/* Estilo para o ícone do WhatsApp */
+#whatsapp-icon {
+  position: fixed;
+  bottom: 20px; /* Distância da parte inferior */
+  right: 20px; /* Distância da parte direita */
+  background-color: #0ca1fe; /* Cor verde do WhatsApp */
+  color: white; /* Cor do ícone */
+  font-size: 40px; /* Tamanho do ícone */
+  padding: 15px;
+  border-radius: 100px; /* Torna o botão redondo */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para o botão */
+  transition: transform 0.3s ease; /* Animação ao passar o mouse */
+}
+
+#whatsapp-icon:hover {
+  transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
+}
+.contact-info {
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 18px;
+}
+
+.contact-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+
+.new-section {
+  padding: 40px 20px; /* Espaçamento interno */
+}
+
+
+
+
+.new-section-container {
+            position: relative;
+            z-index: 2;
+            background-image: url('https://static.vecteezy.com/ti/vetor-gratis/p1/18753791-recursos-humanos-gestao-de-rh-recrutamento-emprego-headhunting-business-rede-social-humana-e-conceito-de-lideranca-em-forma-de-esfera-poligonal-na-mao-de-wireframe-ilustracaoial-vetor.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.76);
+            width: 60%;  /* A largura pode ser ajustada conforme necessário */
+            max-width: 100%;  /* Limite de largura */
+            height: 85%;  /* A altura agora ocupa 80% da tela */
+            display: flex;
+            justify-content: flex-start; /* Alinha ao início (esquerda) */
+            align-items: flex-start; /* Alinha ao topo */
+            flex-direction: column; /* Coloca título e parágrafo na vertical */
+            color: white; /* Alinha o texto à cor branca */
+}
+/* Estilo da div de texto */
+.text2 {
+  display: flex;
+  flex-direction: column; /* Alinha título e parágrafos na vertical */
+  align-items: center; /* Alinha o texto à esquerda */
+  width: 40%; /* Largura máxima da div */
+  height: 100%; /* Altura máxima da div */
+  font-size: 20px;
+  background-image: linear-gradient(to right, #000000f1, #000000e0, #00000070, #00000042, #00000000);  
+  color: #ffffff; /* Texto branco para contraste */
+  padding: 20px; /* Espaço interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  animation: fadeInUp 2s ease-out 1s forwards;
+  overflow: auto; /* Esconde o conteúdo que ultrapassa os limites */
+  text-overflow: ellipsis; /* Adiciona reticências se o texto for muito longo */
+  padding: 5%;
+}
+
+
+  /* Estilo para o vídeo de fundo */
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Camada semi-transparente em cima do vídeo */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1e1e1ee3;
+}
+ /* Estilo das bolinhas */
+ .dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  background-color: blue;
+  border-radius: 50%;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;  /* Mostra o cursor de clique */
+}
+
+/* Efeito de zoom ao passar o mouse */
+.dot:hover {
+  transform: scale(1.3);  /* Aumenta o tamanho da bolinha */
+}
+
+/* Estilo do novo texto */
+.mission-text, .specialty-text, .hire-text {
+  display: none; /* Inicialmente escondido */
+  font-size: 18px;
+  line-height: 1.6;
+  
+}
